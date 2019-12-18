@@ -17,7 +17,10 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" value="login"></td>
+				<td>
+					<input type="submit" value="login">
+					<a href="{{url('/register')}}">Registrasi</a>
+				</td>
 			</tr>
 		</form>
 	</table>

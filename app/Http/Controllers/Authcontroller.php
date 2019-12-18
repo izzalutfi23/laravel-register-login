@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\User;
 use Illuminate\Http\Request;
 
 class Authcontroller extends Controller
@@ -21,5 +22,18 @@ class Authcontroller extends Controller
     public function logout(){
     	Auth::logout();
     	return redirect('/');
+    }
+
+    public function getregister(){
+        return view('register');
+    }
+
+    public function postregister(Request $request){
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
+        return redirect('/');
     }
 }

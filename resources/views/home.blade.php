@@ -4,7 +4,7 @@
 	<title>Home</title>
 </head>
 <body>
-Home<br>
+Selamat datang {{auth()->user()->name}}<br>
 <a href="/logout">Logout</a>
 </body>
 </html>
