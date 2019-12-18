@@ -29,6 +29,12 @@ class Authcontroller extends Controller
     }
 
     public function postregister(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|unique:users',
+            'password'=>'required|confirmed'
+        ]);
+
         User::create([
             'name' => $request->name,
             'email' => $request->email,
